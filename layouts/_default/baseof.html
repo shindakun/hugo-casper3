@@ -44,6 +44,7 @@
     {{- end }}
 
     <link href="https://github.com/shindakun" rel="me">
+    <link href="mailto:steve@shindakun.net" rel="me">
 
     {{ $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" />
