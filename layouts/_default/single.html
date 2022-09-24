@@ -57,11 +57,11 @@
             {{ if .Param "feature_video" }}
             <video width="100%" height="auto" autoplay="" playsinline="" poster="" loop="">
               
-              {{ if eq .Param.video_type "mp4" }}
+              {{ if eq .Params.video_type "mp4" }}
               <source src="{{ .Param "feature_video" }}" type="video/mp4">
               {{ end }}
               
-              {{ if eq .Param.video_type "webm" }}
+              {{ if eq .Params.video_type "webm" }}
               <source src="{{ .Param "feature_video" }}" type="video/webm">
               {{ end }}
 
