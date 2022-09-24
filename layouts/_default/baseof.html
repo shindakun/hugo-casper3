@@ -11,6 +11,38 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    {{ with .OutputFormats.Get "RSS" }}
+        <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+        <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+    {{ end }}
+    
+    {{ with .OutputFormats.Get "JSON" }}
+        <link href="{{ .RelPermalink }}" rel="alternate" type="application/feed+json" title="{{ $.Site.Title }}" />
+    {{ end }}
+
+    {{- if $.Site.Params.indieauth }}	
+        <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+        <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    {{ end }}
+
+    {{- if $.Site.Params.webmentions }}
+        <link rel="webmention" href="https://webmention.io/{{ $.Site.Params.domain }}/webmention" />
+        <link rel="pingback" href="https://webmention.io/{{ $.Site.Params.domain }}/xmlrpc" />
+    {{ end }}
+
+    {{- if $.Site.Params.microsub }}
+        <link rel="microsub" href="https://aperture.p3k.io/microsub/{{ $.Site.Params.microsub }}">
+    {{ end }}
+  
+        <meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
+
+    {{- if $.Site.Params.opengraph }}
+        {{ template "_internal/opengraph.html" . }}
+    {{- end }}
+    {{- if $.Site.Params.twitter_cards }}
+        {{ template "_internal/twitter_cards.html" . }}
+    {{- end }}
+
     {{ $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" />
 
