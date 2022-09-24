@@ -54,14 +54,14 @@
                 <img src="{{ .Param "feature_image" }}" alt="{{ .Title }}" />
             </figure>
             {{ end }}
-            {{ if .Param "feature_video"}}
+            {{ if .Param "feature_video" }}
             <video width="100%" height="auto" autoplay="" playsinline="" poster="" loop="">
               
-              {{ if .Param "video_type eq "mp4"}}
+              {{ if .Param "video_type" eq "mp4" }}
               <source src="{{ .Param "feature_video" }}" type="video/mp4">
               {{ end }}
               
-              {{ if .Param "video_type eq "webm"}}
+              {{ if .Param "video_type" eq "webm" }}
               <source src="{{ .Param "feature_video" }}" type="video/webm">
               {{ end }}
 
