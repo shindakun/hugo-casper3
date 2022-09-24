@@ -55,7 +55,7 @@
             </figure>
             {{ end }}
             {{ if .Param "feature_video" }}
-            <video width="100%" height="auto" autoplay="true" playsinline="" poster="" loop="">
+            <video width="100%" height="auto" autoplay playsinline poster loop>
               
               {{ if eq .Params.video_type "mp4" }}
               <source src="{{ .Param "feature_video" }}" type="video/mp4">
