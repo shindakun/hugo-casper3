@@ -44,20 +44,19 @@
     {{- end }}
 
   {{ if not $.Site.IsServer }}
-  {{ if $.Site.Params.pathfora }}
-    <script src="https://c.lytics.io/static/pathfora.min.js"></script>
-  {{ end }}
+    {{ if $.Site.Params.pathfora }}
+      <script src="https://c.lytics.io/static/pathfora.min.js"></script>
+    {{ end }}
   {{ if $.Site.Params.google_tag_manager }}
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','{{ $.Site.Params.google_tag_manager }}');</script>
-    <!-- End Google Tag Manager -->
+      <!-- End Google Tag Manager -->
+    {{ end }}
   {{ end }}
-  {{ end }}
-
 
     <link href="https://github.com/shindakun" rel="me">
     <link href="mailto:steve@shindakun.net" rel="me">
@@ -78,8 +77,8 @@
                 <nav class="site-footer-nav">
                     <a href="{{ .Site.BaseURL }}">Latest Posts</a>
                     {{ if .Site.Params.facebook }}<a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a>{{ end }}
-                    {{ if .Site.Params.twitter }}<a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener">Twitter</a>{{ end }}
-                    {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Github</a>{{ end }}
+                    {{ if .Site.Params.twitter }}<a href="{{ .Site.Params.twitter }}" target="_blank" rel="me noopener">Twitter</a>{{ end }}
+                    {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}" target="_blank" rel="me noopener">Github</a>{{ end }}
                     <a href="https://jonathanjanssens.com" target="_blank" rel="noopener" style="opacity: 0.5;">Hugo Casper3 by Jonathan Janssens</a>
                 </nav>
             </div>
