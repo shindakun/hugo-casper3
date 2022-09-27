@@ -50,23 +50,25 @@
             </header>
 
             {{ if .Param "feature_image" }}
-            <figure class="post-full-image">
-                <img src="{{ .Param "feature_image" }}" alt="{{ .Title }}" />
-            </figure>
+                {{ if isset .Params "feature_video" }}
+                <video width="100%" height="auto" autoplay playsinline poster loop>
+              
+                    {{ if eq .Params.video_type "mp4" }}
+                    <source src="{{ .Param "feature_video" }}" type="video/mp4">
+                    {{ end }}
+                    
+                    {{ if eq .Params.video_type "webm" }}
+                    <source src="{{ .Param "feature_video" }}" type="video/webm">
+                    {{ end }}
+      
+                  </video>
+                {{else}}
+                <figure class="post-full-image">
+                    <img src="{{ .Param "feature_image" }}" alt="{{ .Title }}" />
+                </figure>
+                {{ end }}
             {{ end }}
-            {{ if .Param "feature_video" }}
-            <video width="100%" height="auto" autoplay playsinline poster loop>
-              
-              {{ if eq .Params.video_type "mp4" }}
-              <source src="{{ .Param "feature_video" }}" type="video/mp4">
-              {{ end }}
-              
-              {{ if eq .Params.video_type "webm" }}
-              <source src="{{ .Param "feature_video" }}" type="video/webm">
-              {{ end }}
 
-            </video>
-            {{ end }}
             <section class="post-full-content">
                 <div class="post-content">
                     {{ .Content }}
