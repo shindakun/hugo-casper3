@@ -9,7 +9,7 @@
 <main id="site-main" class="site-main outer">
     <div class="inner">
 
-        <article class="post-full post {{ if not (.Param "feature_image") }} no-image {{ end }}">
+        <article class="h-entry post-full post {{ if not (.Param "feature_image") }} no-image {{ end }}">
 
             <header class="post-full-header">
 
@@ -20,7 +20,8 @@
                     </section>
                 {{ end }}
 
-                <h1 class="post-full-title">{{ .Title }}</h1>
+                <h1 class="p-name post-full-title">{{ .Title }}</h1>
+                <a class="u-url" href="{{ .Permalink }}"></a>
 
                 {{ if .Param "summary" }}
                     <p class="post-full-custom-excerpt">{{ .Summary }}</p>
@@ -38,7 +39,7 @@
                                 <h4 class="author-name">{{ .Param "author" }}</h4>
                             {{ end }}
                             <div class="byline-meta-content">
-                                <time class="byline-meta-date" datetime="{{.Date.Format "2006-31-01"}}">{{.Date.Format "2 January 2006"}}</time>
+                                <time class="dt-published byline-meta-date" datetime="{{.Date.Format "2006-31-01"}}">{{.Date.Format "2 January 2006"}}</time>
                                 <span class="byline-reading-time"><span class="bull">&bull;</span> {{ .ReadingTime }} min read</span>
                             </div>
                         </section>
@@ -70,7 +71,7 @@
             {{ end }}
 
             <section class="post-full-content">
-                <div class="post-content">
+                <div class="e-content post-content">
                     {{ .Content }}
                 </div>
             </section>
