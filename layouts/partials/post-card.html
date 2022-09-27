@@ -1,4 +1,4 @@
-<article class="post-card post
+<article class="h-feed post-card post
 {{ if not (.context.Param "feature_image") }} no-image
 {{ else }}
 {{ if (eq (mod .index 6) 0) }} post-card-large {{ end }}
@@ -12,7 +12,7 @@
     
         <div class="post-card-content">
     
-            <a class="post-card-content-link" href="{{ .context.Permalink }}">
+            <a class="h-entry u-url post-card-content-link" href="{{ .context.Permalink }}">
     
                 <header class="post-card-header">
                     {{ with .context.Params.tags }}
@@ -20,7 +20,7 @@
                         <div class="post-card-primary-tag">{{ $primaryTag }}</div>
                     {{ end }}
 
-                    <h2 class="post-card-title">{{ .context.Title }}</h2>
+                    <h2 class="p-name post-card-title">{{ .context.Title }}</h2>
                 </header>
     
                 <section class="post-card-excerpt">
