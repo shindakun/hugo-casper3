@@ -50,7 +50,7 @@
             </header>
 
             {{ if .Param "feature_image" }}
-                {{ if isset .Params "feature_video" }}
+                {{ if isset .Param "feature_video" }}
                 <video width="100%" height="auto" autoplay playsinline poster loop>
               
                     {{ if eq .Params.video_type "mp4" }}
