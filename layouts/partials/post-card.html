@@ -1,4 +1,4 @@
-<article class="post-card post
+<article class="h-entry post-card post
 {{ if not (.context.Param "feature_image") }} no-image
 {{ else }}
 {{ if (eq (mod .index 6) 0) }} post-card-large {{ end }}
@@ -12,7 +12,7 @@
     
         <div class="post-card-content">
     
-            <a class="h-entry u-url post-card-content-link" href="{{ .context.Permalink }}">
+            <a class="u-url post-card-content-link" href="{{ .context.Permalink }}">
     
                 <header class="post-card-header">
                     {{ with .context.Params.tags }}
@@ -23,7 +23,7 @@
                     <h2 class="p-name post-card-title">{{ .context.Title }}</h2>
                 </header>
     
-                <section class="post-card-excerpt">
+                <section class="p-summary post-card-excerpt">
                     <p>{{ .context.Summary }}</p>
                 </section>
     
