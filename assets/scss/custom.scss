@@ -1,3 +1,55 @@
 .post-content > div {
     width: 100%;
 }
+
+  /* webmention avatars */
+  .comment-avatar.u-photo.js-avatar {
+	width: 75px;
+	height:auto;
+	float:left;
+	margin-top:0;
+	margin-right:1rem;
+	border-radius: 50%;
+  }
+  
+  #replies li {
+   list-style: none;
+   clear:both;
+   padding-top:1rem;
+  }
+  
+  .like-avatar.u-photo.js-avatar {
+	width: 75px;
+	height:auto;
+	float:left;
+	margin-top:0;
+	margin-right:1rem;
+	border-radius: 50%;
+  }
+  
+  #likes li {
+	list-style: none;
+	clear:both;
+	padding-top:1rem;
+   }
+  
+  .share-avatar.u-photo.js-avatar {
+	width: 75px;
+	height:auto;
+	float:left;
+	margin-top:0;
+	margin-right:1rem;
+	border-radius: 50%;
+  }
+  
+  #shares li {
+	list-style: none;
+	clear:both;
+	padding-top:1rem;
+  }
+  
+  .p-author {
+	font-style:italic;
+	font-family:serif;
+	color:gray;
+  }
